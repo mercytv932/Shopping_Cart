@@ -8,9 +8,10 @@
 </head>
 <body>
   
- <div id="products-container"></div> 
+ <div id="productsContainer"></div> 
 
 <script>
+  const productsContainer = document.querySelector("#productsContainer");
 
  let products = [
   {name: "Apple", id: 1, price: 1.99},
@@ -24,10 +25,26 @@
   {name:"Milk", id: 7, price: 1.00},
   {name:"Water", id: 8, price:1.00},
   {name: "Bread", id: 9, price:1.00}  
-
  ];
-
  console.log(products);
+
+ products.forEach(product=>{
+  const newDiv = document.createElement("div");
+  const newHTag = document.createElement("h4");
+  const newPTag = document.createElement("p");
+  const add = document.createElement("button");
+
+  newDiv.classList.add("newProduct");
+  newHTag.textContent = product.name;
+  newPTag.textContent = `$${product.price}`;
+  add.textContent = "Add to cart";
+
+  newDiv.appendChild(newHTag);
+  newDiv.appendChild(newPTag);
+  newDiv.appendChild(add);
+
+  productsContainer.appendChild(newDiv);
+ });
 
 </script>
 </body>
