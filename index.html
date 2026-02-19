@@ -28,6 +28,10 @@
  ];
  console.log(products);
 
+ //empty cart to add
+ let cart = [];
+ console.log(cart);
+
  products.forEach(product=>{
   const newDiv = document.createElement("div");
   const newHTag = document.createElement("h4");
@@ -44,6 +48,12 @@
   newDiv.appendChild(add);
 
   productsContainer.appendChild(newDiv);
+
+  add.addEventListener("click", function(){
+    cart.push(product);
+    console.log(cart);
+  });
+  
  });
 
 </script>
