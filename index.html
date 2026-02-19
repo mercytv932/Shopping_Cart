@@ -74,6 +74,34 @@
 
  });
 
+ cartButton.addEventListener("click", function(){
+  if(cartView.style.display =="none"){
+    cartView.style.display = "block"// show
+  }else{
+    cartView.style.display = "none";
+  }
+ });
+
+ 
+  function displayCartItems(){
+    cartView.innerHTML = "";
+    cart.forEach(item=>{
+
+      const newDiv = document.createElement("div");
+      const newHTag = document.createElement("h4");
+      const newPTag = document.createElement("p");
+
+      newDiv.classList.add("newProduct");
+      newHTag.textContent = item.name;
+      newPTag.textContent = `$${item.price}`;
+
+     newDiv.appendChild(newHTag);
+     newDiv.appendChild(newPTag);
+
+     cartView.appendChild(newDiv);
+     });
+
+  }
 </script>
 </body>
 </html>
