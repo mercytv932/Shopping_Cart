@@ -43,10 +43,32 @@
  let cart = [];
  console.log(cart);
 
+
    function updateCart(){
     span.textContent = cart.length;
+  } updateCart();
+
+
+     function displayCartItems(){
+    cartView.innerHTML = "";
+    cart.forEach(item=>{
+
+      const newDiv = document.createElement("div");
+      const newHTag = document.createElement("h4");
+      const newPTag = document.createElement("p");
+
+      newDiv.classList.add("newProduct");
+      newHTag.textContent = item.name;
+      newPTag.textContent = `$${item.price}`;
+
+     newDiv.appendChild(newHTag);
+     newDiv.appendChild(newPTag);
+
+     cartView.appendChild(newDiv);
+     });
+
+     calculateTotal();
   }
-   updateCart();
 
  products.forEach(product=>{
   const newDiv = document.createElement("div");
@@ -82,26 +104,21 @@
   }
  });
 
- 
-  function displayCartItems(){
-    cartView.innerHTML = "";
-    cart.forEach(item=>{
+function calculateTotal(){
+  let total = 0;
 
-      const newDiv = document.createElement("div");
-      const newHTag = document.createElement("h4");
-      const newPTag = document.createElement("p");
-
-      newDiv.classList.add("newProduct");
-      newHTag.textContent = item.name;
-      newPTag.textContent = `$${item.price}`;
-
-     newDiv.appendChild(newHTag);
-     newDiv.appendChild(newPTag);
-
-     cartView.appendChild(newDiv);
-     });
-
+  for(let i=0; i < cart.length; i++){
+    total += cart[i].price;
   }
+
+
+  const newDiv = document.createElement("div");
+  newDiv.textContent = `Total: ${total.toFixed(2)}`;
+
+  cartView.appendChild(newDiv);
+}
+
+
 </script>
 </body>
 </html>
