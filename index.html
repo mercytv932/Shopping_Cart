@@ -58,21 +58,41 @@
       const newHTag = document.createElement("h4");
       const newPTag = document.createElement("p");
       const removeBtn = document.createElement("button");
+      const plusBtn = document.createElement("button");
+      const minusBtn = document.createElement("button");
 
       newDiv.classList.add("newProduct");
       newHTag.textContent = `${item.name} (x${item.quantity})`;
       newPTag.textContent = `$${item.price}`;
       removeBtn.textContent = "X"
+      plusBtn.textContent = "+"
+      minusBtn.textContent = "-"
+
       removeBtn.addEventListener("click", function(){
         cart= cart.filter(cartItem => cartItem.id !== item.id);
         updateCart();
         displayCartItems();
-      })
+      });
 
+      plusBtn.addEventListener("click", function(){
+        item.quantity++;
+        displayCartItems();
+      });
+
+      minusBtn.addEventListener("click", function(){
+        item.quantity--;
+        if(item.quantity <= 0){
+         cart = cart.filter(cartItem => cartItem.id !==item.id);
+         updateCart();
+        } 
+        displayCartItems();
+      });
 
 
      newDiv.appendChild(newHTag);
      newDiv.appendChild(newPTag);
+     newDiv.appendChild(plusBtn);
+     newDiv.appendChild(plusBtn);
      newDiv.appendChild(removeBtn);
 
 
@@ -109,7 +129,7 @@
       existingProduct.quantity++;
       console.log(`Increased quantity of ${product.name}. New quantity: ${existingProduct.quantity}`);
     } else{
-
+      
       cart.push({...product, quantity: 1});
       console.log(`Added new product to cart: ${product.name}`);
     }
