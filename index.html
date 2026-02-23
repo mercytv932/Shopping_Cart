@@ -57,13 +57,25 @@
       const newDiv = document.createElement("div");
       const newHTag = document.createElement("h4");
       const newPTag = document.createElement("p");
+      const removeBtn = document.createElement("button");
 
       newDiv.classList.add("newProduct");
       newHTag.textContent = `${item.name} (x${item.quantity})`;
       newPTag.textContent = `$${item.price}`;
+      removeBtn.textContent = "X"
+      removeBtn.addEventListener("click", function(){
+        cart= cart.filter(cartItem => cartItem.id !== item.id);
+        updateCart();
+        displayCartItems();
+      })
+
+
 
      newDiv.appendChild(newHTag);
      newDiv.appendChild(newPTag);
+     newDiv.appendChild(removeBtn);
+
+
 
      cartView.appendChild(newDiv);
      });
