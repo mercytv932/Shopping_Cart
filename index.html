@@ -49,6 +49,7 @@
   } updateCart();
 
 
+
      function displayCartItems(){
     cartView.innerHTML = "";
     cart.forEach(item=>{
@@ -58,7 +59,7 @@
       const newPTag = document.createElement("p");
 
       newDiv.classList.add("newProduct");
-      newHTag.textContent = item.name;
+      newHTag.textContent = `${item.name} (x${item.quantity})`;
       newPTag.textContent = `$${item.price}`;
 
      newDiv.appendChild(newHTag);
@@ -69,6 +70,7 @@
 
      calculateTotal();
   }
+
 
  products.forEach(product=>{
   const newDiv = document.createElement("div");
@@ -87,14 +89,27 @@
 
   productsContainer.appendChild(newDiv);
 
+
   addBtn.addEventListener("click", function(){
-    cart.push(product);
-    updateCart();
+    
+    const existingProduct = cart.find(item => item.id === product.id);
+    if(existingProduct){
+      existingProduct.quantity++;
+      console.log(`Increased quantity of ${product.name}. New quantity: ${existingProduct.quantity}`);
+    } else{
+
+      cart.push({...product, quantity: 1});
+      console.log(`Added new product to cart: ${product.name}`);
+    }
+
+    updateCart()
     displayCartItems();
     console.log(cart);//just for testing, can be removed later
   });
 
  });
+
+
 
  cartButton.addEventListener("click", function(){
   if(cartView.style.display =="none"){
@@ -108,7 +123,7 @@ function calculateTotal(){
   let total = 0;
 
   for(let i=0; i < cart.length; i++){
-    total += cart[i].price;
+    total += cart[i].price * cart[i].quantity;
   }
 
 
