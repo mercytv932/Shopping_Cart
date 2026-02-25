@@ -43,6 +43,17 @@
  let cart = [];
  console.log(cart);
 
+    const clearBtn = document.createElement("button");
+   clearBtn.textContent = "Clear Cart"
+   document.body.appendChild(clearBtn);
+
+   clearBtn.addEventListener("click", function(){
+    cart = [];
+    localStorage.removeItem('cart');
+    updateCart();
+    displayCartItems();
+   });
+
 
    function updateCart(){
     span.textContent = cart.length;
@@ -97,14 +108,15 @@
      newDiv.appendChild(minusBtn)
      newDiv.appendChild(plusBtn);
      newDiv.appendChild(removeBtn);
-
-
+     
 
      cartView.appendChild(newDiv);
      });
-
+     
      calculateTotal();
-  }
+}
+
+
 
 
  products.forEach(product=>{
@@ -188,8 +200,6 @@ displayCartItems();
 }
 
 loadCart();
-
-
 </script>
 </body>
 </html>
