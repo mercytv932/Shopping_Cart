@@ -72,11 +72,13 @@
         cart= cart.filter(cartItem => cartItem.id !== item.id);
         updateCart();
         displayCartItems();
+        localStorage.setItem('cart', JSON.stringify(cart));
       });
 
       plusBtn.addEventListener("click", function(){
         item.quantity++;
         displayCartItems();
+        localStorage.setItem('cart', JSON.stringify(cart));
       });
 
       minusBtn.addEventListener("click", function(){
@@ -86,12 +88,13 @@
          updateCart();
         } 
         displayCartItems();
+        localStorage.setItem('cart',JSON.stringify(cart));
       });
 
 
      newDiv.appendChild(newHTag);
      newDiv.appendChild(newPTag);
-     newDiv.appendChild(plusBtn);
+     newDiv.appendChild(minusBtn)
      newDiv.appendChild(plusBtn);
      newDiv.appendChild(removeBtn);
 
@@ -137,6 +140,8 @@
     updateCart()
     displayCartItems();
     console.log(cart);//just for testing, can be removed later
+
+    localStorage.setItem('cart',JSON.stringify(cart));
   });
 
  });
@@ -164,6 +169,25 @@ function calculateTotal(){
 
   cartView.appendChild(newDiv);
 }
+
+
+
+function loadCart(){
+  const storedCart = localStorage.getItem('cart');
+  if(storedCart){
+    try {
+    cart = JSON.parse(storedCart);
+  } catch (error){
+    console.log("Enter parsing items fromm localStorage");
+  
+    cart = [];
+  }
+}
+updateCart();
+displayCartItems();
+}
+
+loadCart();
 
 
 </script>
