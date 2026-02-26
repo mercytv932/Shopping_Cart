@@ -1,4 +1,4 @@
-const productsContainer = document.querySelector("#productsContainer");
+  const productsContainer = document.querySelector("#productsContainer");
   const cartButton = document.getElementById("cart-icon-button");
   const span = document.querySelector("#span");
   const cartView = document.querySelector("#cartView");
@@ -24,16 +24,7 @@ const productsContainer = document.querySelector("#productsContainer");
  let cart = [];
  console.log(cart);
 
-    const clearBtn = document.createElement("button");
-   clearBtn.textContent = "Clear Cart"
-   document.body.appendChild(clearBtn);
 
-   clearBtn.addEventListener("click", function(){
-    cart = [];
-    localStorage.removeItem('cart');
-    updateCart();
-    displayCartItems();
-   });
 
 
    function updateCart(){
@@ -95,6 +86,18 @@ const productsContainer = document.querySelector("#productsContainer");
      });
      
      calculateTotal();
+
+
+   const clearBtn = document.createElement("button");
+   clearBtn.textContent = "Clear Cart"
+   document.body.appendChild(clearBtn);
+
+   clearBtn.addEventListener("click", function(){
+    cart = [];
+    localStorage.removeItem('cart');
+    updateCart();
+    displayCartItems();
+   });
 }
 
 
