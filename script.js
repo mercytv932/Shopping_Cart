@@ -1,3 +1,4 @@
+
   const productsContainer = document.querySelector("#productsContainer");
   const cartButton = document.getElementById("cart-icon-button");
   const span = document.querySelector("#span");
@@ -86,9 +87,9 @@
      });
      
      calculateTotal();
+}
 
-
-   const clearBtn = document.createElement("button");
+const clearBtn = document.createElement("button");
    clearBtn.textContent = "Clear Cart"
    document.body.appendChild(clearBtn);
 
@@ -98,7 +99,6 @@
     updateCart();
     displayCartItems();
    });
-}
 
 
 
