@@ -1,4 +1,5 @@
 
+
   const productsContainer = document.querySelector("#productsContainer");
   const cartButton = document.getElementById("cart-icon-button");
   const span = document.querySelector("#span");
@@ -92,6 +93,7 @@
 const clearBtn = document.createElement("button");
    clearBtn.textContent = "Clear Cart"
    document.body.appendChild(clearBtn);
+   clearBtn.className = "clearBtn";
 
    clearBtn.addEventListener("click", function(){
     cart = [];
