@@ -1,0 +1,122 @@
+body{
+  background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
+  background-blend-mode: screen;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+#cart-icon-button{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: burlywood;
+  z-index: 1000;
+}
+
+#cart-icon-button:hover{
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+  transition: 0.3s ease-in-out;
+}
+
+#productsContainer{
+  display: grid;
+  gap: 20px;
+  max-width: 1200px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 80px;
+}
+
+.newProduct{
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.newProduct:hover{
+  box-shadow: 1px 2px 2px hsl(220deg 60% 50% / 0.2),
+      2px 4px 4px hsl(220deg 60% 50% / 0.2),
+      4px 8px 8px hsl(220deg 60% 50% / 0.2),
+      8px 16px 16px hsl(220deg 60% 50% / 0.2),
+      16px 32px 32px hsl(220deg 60% 50% / 0.2); ;
+  transform:translateY(-5px) scale(1.05);
+  transition: 0.3s ease-in-out;    
+}
+
+.newProduct h4{
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-top:0;
+  margin-bottom: 10px;
+}
+
+.newProduct p{
+  font-size: 16px;
+  color: #333;
+  font-weight:600;
+  margin: 10px;
+}
+
+.newProduct button{
+  background-color: lightgreen;
+  color: white;
+  padding: 10px;
+  border: thin;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.newProduct button:hover{
+  background-color: rgb(20, 239, 20);
+  transform: translateY(-3px) scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+
+#cartView{
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 400px;
+  height: 100vh;
+  background-color: white;
+  box-shadow:rgba(0,0,0,0.25) -14px 0px 28px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.clearBtn {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 15px;
+  background-color: rgb(66, 66, 66);
+  border-radius: 10px;
+  color: white;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition-duration: .2s;
+}
+
+.clearBtn:hover {
+  background-color: rgb(77, 77, 77);
+  transition-duration: .2s;
+}
+
+.clearBtn:active {
+  transform: translate(1px , 1px);
+  transition-duration: .2s;
+}
