@@ -18,8 +18,13 @@
 
   {name:"Milk", id: 7, price: 1.00},
   {name:"Water", id: 8, price:1.00},
-  {name: "Bread", id: 9, price:1.00}  
+  {name: "Bread", id: 9, price:1.00},
+
+    {name:"Eggs", id: 11, price: 4.99},
+    {name:"Rice", id: 12, price: 20},
+    {name:"Salt", id: 13, price: 7.99}
  ];
+
  console.log(products);
 
  //empty cart to add
@@ -47,11 +52,21 @@
       const minusBtn = document.createElement("button");
 
       newDiv.classList.add("newProduct");
+
       newHTag.textContent = `${item.name} (x${item.quantity})`;
+      newHTag.className = "newHTag";
+
       newPTag.textContent = `$${item.price}`;
+      newPTag.className = "newPTag"
+
       removeBtn.textContent = "X"
+      removeBtn.className = "removeBtn";
+
       plusBtn.textContent = "+"
+      plusBtn.className = "plusBtn";
+
       minusBtn.textContent = "-"
+      minusBtn.className = "minusBtn";
 
       removeBtn.addEventListener("click", function(){
         cart= cart.filter(cartItem => cartItem.id !== item.id);
@@ -82,6 +97,7 @@
      newDiv.appendChild(minusBtn)
      newDiv.appendChild(plusBtn);
      newDiv.appendChild(removeBtn);
+     
      
 
      cartView.appendChild(newDiv);
@@ -163,7 +179,7 @@ function calculateTotal(){
 
 
   const newDiv = document.createElement("div");
-  newDiv.textContent = `Total: ${total.toFixed(2)}`;
+  newDiv.textContent = `Total: $${total.toFixed(2)}`;
 
   cartView.appendChild(newDiv);
 }
