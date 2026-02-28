@@ -120,3 +120,60 @@ body{
   transform: translate(1px , 1px);
   transition-duration: .2s;
 }
+
+    #cartView .newProduct{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+      background: none;
+      box-shadow: none;
+    }
+
+    .newHTag{
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .newPTag{
+      font-size: 14px;
+      margin: 0 10px;
+    }
+
+    .minusBtn, .plusBtn, .removeBtn{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.2s;
+    }
+
+    #cartView .minusBtn{
+      background-color: #ddd;
+      color: #333;
+    }
+
+    #cartView .plusBtn{
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #cartView .removeBtn{
+      background-color: #f44336;
+      color: white;
+    }
+
+    #cartView .minusBtn:hover{
+      background-color: #bbb;
+    }
+
+    #cartView .plusBtn:hover{
+      background-color: #45a049;
+    }
+
+    #cartView .removeBtn:hover{
+      background-color: #da190b;
+    }
