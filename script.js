@@ -119,7 +119,7 @@ const clearBtn = document.createElement("button");
    });
 
 
-
+cartView
 
  products.forEach(product=>{
   const newDiv = document.createElement("div");
@@ -179,9 +179,11 @@ function calculateTotal(){
 
 
   const newDiv = document.createElement("div");
+  newDiv.className = "totalPrice";
   newDiv.textContent = `Total: $${total.toFixed(2)}`;
 
   cartView.appendChild(newDiv);
+  cartView.appendChild(clearBtn);
 }
 
 
