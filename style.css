@@ -95,6 +95,7 @@ body{
 }
 
 .clearBtn {
+  margin-top: 20px;
   width: 200px;
   height: 40px;
   display: flex;
@@ -177,3 +178,15 @@ body{
     #cartView .removeBtn:hover{
       background-color: #da190b;
     }
+
+    
+   .totalPrice{
+      font-size: 18px;
+      font-weight: bold;
+      padding: 7px;
+      border-top: 10px;
+      text-align: center;
+      background-color: aqua;
+    }
+
+    
