@@ -119,6 +119,12 @@ const clearBtn = document.createElement("button");
    });
 
 
+ const purchaseBtn = document.createElement("button"); 
+   purchaseBtn.textContent = "Purchase";
+   purchaseBtn.className = "purchaseBtn";
+   document.body.appendChild(purchaseBtn);
+
+
 cartView
 
  products.forEach(product=>{
@@ -169,6 +175,7 @@ cartView
     cartView.style.display = "none";
   }
  });
+
  
 
 function calculateTotal(){
@@ -185,6 +192,7 @@ function calculateTotal(){
 
   cartView.appendChild(newDiv);
   cartView.appendChild(clearBtn);
+  cartView.appendChild(purchaseBtn);
 }
 
 
