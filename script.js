@@ -169,6 +169,7 @@ cartView
     cartView.style.display = "none";
   }
  });
+ 
 
 function calculateTotal(){
   let total = 0;
@@ -202,5 +203,15 @@ function loadCart(){
 updateCart();
 displayCartItems();
 }
+
+
+//close the viewCart when clicking the page
+document.addEventListener("click", function(){
+  if(!cartView.contains(event.target) && !cartButton.contains(event.target)){
+    cartView.style.display = "none";
+  }
+});
+
+
 
 loadCart();
