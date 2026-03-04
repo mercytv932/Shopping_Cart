@@ -69,6 +69,7 @@
       minusBtn.className = "minusBtn";
 
       removeBtn.addEventListener("click", function(){
+        event.stopPropagation();
         cart= cart.filter(cartItem => cartItem.id !== item.id);
         updateCart();
         displayCartItems();
@@ -76,12 +77,14 @@
       });
 
       plusBtn.addEventListener("click", function(){
+        event.stopPropagation();
         item.quantity++;
         displayCartItems();
         localStorage.setItem('cart', JSON.stringify(cart));
       });
 
       minusBtn.addEventListener("click", function(){
+        event.stopPropagation();
         item.quantity--;
         if(item.quantity <= 0){
          cart = cart.filter(cartItem => cartItem.id !==item.id);
