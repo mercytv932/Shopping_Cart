@@ -5,8 +5,6 @@ This project demonstrates dynamic DOM manipulation, cart state management, and b
 
 The application allows users to browse products, add items to a cart, adjust quantities, and calculate the total price in real time.
 
----
-
 ## Features
 
 - Display products dynamically from a JavaScript array
