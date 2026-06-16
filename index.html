@@ -3,39 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shopping Cart</title>
-  <link rel = "stylesheet" href = "style.css">
+  <title>GreenCart | Shopping</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <header class="header">
+    <div class="brand">
+      <div class="brand-icon">🛍️</div>
+      <div class="brand-text">
+        <span>Fresh picks</span>
+        <h2>GreenCart</h2>
+      </div>
+    </div>
 
-<header  class="header">
-  <nav class="nav">
-    <a href="#Home">Home</a>
-    <a href="About">About</a>
-    <a href="Contact">Contact</a>
-    <a href="More">More</a>
-  </nav>
-</header>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">Deals</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
 
-<div>
-<button id="cart-icon-button">🛒<span id="span"></span></button>
-</div>
+    <div class="header-actions">
+      <a href="#">Track Order</a>
+    </div>
+  </header>
 
- <div id="productsContainer"></div> 
+  <button id="cart-icon-button">🛒 <span id="span"></span></button>
 
- <div id="cartView" style="display: none;"></div>
+  <div id="productsContainer"></div>
+  <div id="cartView" style="display: none;"></div>
 
+  <footer class="footer">
+    <div>
+      <h3>GreenCart</h3>
+      <p>Stylish essentials for everyday life.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#">Shipping</a>
+      <a href="#">Returns</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <div class="footer-links">
+      <a href="#">Help Center</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Careers</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 GreenCart. All rights reserved.</p>
+  </footer>
 
- <footer class="footer">
-  <p>&copy; 2026 Shooping Cart. All rights reserved.</p>
-  <nav>
-    <a href="Home"></a>
-    <a href="About"></a>
-    <a href="/Privacy Policy"></a>
-  </nav>
- </footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
