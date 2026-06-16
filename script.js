@@ -101,7 +101,6 @@
      newDiv.appendChild(plusBtn);
      newDiv.appendChild(removeBtn);
      
-     
 
      cartView.appendChild(newDiv);
      });
@@ -127,8 +126,6 @@ const clearBtn = document.createElement("button");
    purchaseBtn.className = "purchaseBtn";
    document.body.appendChild(purchaseBtn);
 
-
-cartView
 
  products.forEach(product=>{
   const newDiv = document.createElement("div");
